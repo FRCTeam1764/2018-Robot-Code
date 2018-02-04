@@ -28,7 +28,6 @@ public class DriveForwardForTime extends Command {
     	this.endTime = this.time + this.startTime;
     	Robot.chassis.setSetpoint(0);
     	Robot.chassis.setAdditive(new DiffDriveSignal(-0.25, -0.25));
-
     	
     	Robot.chassis.enable();
     	//Robot.chassis.autoSpeed = -0.5;

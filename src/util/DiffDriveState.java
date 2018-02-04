@@ -26,6 +26,4 @@ public class DiffDriveState {
 	{
 		return getTurnRadius() * getAngularVel();
 	}
-	
-	
 }

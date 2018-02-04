@@ -13,7 +13,9 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
+import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 import util.DiffDriveSignal;
+import util.Grayhill63R;
 
 import org.usfirst.frc.team1764.robot.RobotMap;
 import org.usfirst.frc.team1764.robot.commands.DriveWithJoystick;
@@ -27,7 +29,11 @@ public class Chassis extends PIDSubsystem {
 	public Talon frontLeft, backLeft, frontRight, backRight;
 	public AHRS navx;
 	
+	public Grayhill63R thingy;
+	
 	public DiffDriveSignal additive = DiffDriveSignal.NEUTRAL;
+	
+	//public Potentiometer pot;
 	
 	public double autoSpeed = 0;
 		
@@ -47,7 +53,7 @@ public class Chassis extends PIDSubsystem {
 		this.backRight = new Talon(RobotMap.BACK_RIGHT_MOTOR_PORT);
 		this.navx = new AHRS(SPI.Port.kMXP);
 		//this.shiftSolenoid = new DoubleSolenoid(RobotMap.SHIFT_SOLENOID_LEFT, RobotMap.SHIFT_SOLENOID_RIGHT);
-	
+		this.thingy = new Grayhill63R(0,1);
 		setAbsoluteTolerance(1);
 	}
 	

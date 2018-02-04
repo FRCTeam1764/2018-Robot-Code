@@ -26,10 +26,7 @@ public class DriveWithJoystick extends Command {
     protected void execute() {
     	//System.out.println("ANGLE: " +  chassis.getAngle());
 
-    	double left = oi.getThrottle() + oi.getTurn()*0.5;
-    	double right = oi.getThrottle() - oi.getTurn() * 0.5;
-    	DiffDriveSignal operatorSignal = new DiffDriveSignal(left, right);
-    	chassis.setSignal(operatorSignal);
+    	chassis.setSignal(oi.in.toDiffDriveSignal());
     }
 
     // Make this return true when this Command no longer needs to run execute()

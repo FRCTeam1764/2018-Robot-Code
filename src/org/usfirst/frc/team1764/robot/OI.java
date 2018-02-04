@@ -61,18 +61,22 @@ public class OI {
 	
 	public static JoystickButton followPathButton = new JoystickButton(joy, 12);
 	
+	public OperatorDevice in;
+	
 	public double getThrottle()
 	{
-		return joy.getY();
+		return in.getThrottle();
 	}
 	
 	public double getTurn()
 	{
-		return joy.getZ();
+		return in.getTurn();
 	}
 	
+	
+	
 	public OI() {
-		
+		this.in = new Joy(0);
 		
 		//followPathButton.whenPressed(new FollowPath(p));
 		
