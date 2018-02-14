@@ -33,5 +33,8 @@ public class RobotMap {
 	public static int BACK_RIGHT_MOTOR_PORT = 3;
 	public static int SHIFT_SOLENOID_LEFT = 0;
 	public static int SHIFT_SOLENOID_RIGHT = 4;
+
+	public static int LIFTER_MOTOR_1_PORT = 0;
+	public static int LIFTER_MOTOR_2_PORT = 1;
 	
 }

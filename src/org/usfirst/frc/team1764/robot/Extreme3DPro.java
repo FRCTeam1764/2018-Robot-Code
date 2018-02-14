@@ -39,9 +39,11 @@ public class Extreme3DPro extends OperatorDevice {
 	@Override
 	public void bindButtons() {
 		// TODO Auto-generated method stub
-		this.alignToCamButton = new JoystickButton(this.inputDevice, 0);
-		this.resetGyroButton = new JoystickButton(this.inputDevice, 1);
-		this.driveForwardTimeButton = new JoystickButton(this.inputDevice, 2);
+		this.alignToCamButton = new JoystickButton(this.inputDevice, 11);
+		this.resetGyroButton = new JoystickButton(this.inputDevice, 10);
+		this.driveForwardTimeButton = new JoystickButton(this.inputDevice, 9);
+		this.runLifterUpButton = new JoystickButton(this.inputDevice, 7);
+		this.runLifterDownButton = new JoystickButton(this.inputDevice, 8);
 	}
 
 }

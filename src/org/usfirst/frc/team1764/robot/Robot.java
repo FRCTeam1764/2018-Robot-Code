@@ -18,6 +18,7 @@ import org.usfirst.frc.team1764.robot.commands.AutoPickup;
 import org.usfirst.frc.team1764.robot.commands.FollowPath;
 import org.usfirst.frc.team1764.robot.subsystems.BoxIntake;
 import org.usfirst.frc.team1764.robot.subsystems.Chassis;
+import org.usfirst.frc.team1764.robot.subsystems.Lifter;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -28,6 +29,7 @@ import org.usfirst.frc.team1764.robot.subsystems.Chassis;
  */
 public class Robot extends TimedRobot {
 	public static final Chassis chassis = new Chassis();
+	public static final Lifter lifter = new Lifter();
 	public static final BoxIntake boxIntake = new BoxIntake();
 	public static OI oi;
 	

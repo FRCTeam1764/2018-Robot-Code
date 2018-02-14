@@ -2,10 +2,7 @@ package org.usfirst.frc.team1764.robot;
 
 import static org.usfirst.frc.team1764.robot.Robot.oi;
 
-import org.usfirst.frc.team1764.robot.commands.DriveForwardForTime;
-import org.usfirst.frc.team1764.robot.commands.ResetGyro;
-import org.usfirst.frc.team1764.robot.commands.RunBoxIntake;
-import org.usfirst.frc.team1764.robot.commands.TurnToAngle;
+import org.usfirst.frc.team1764.robot.commands.*;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -25,7 +22,7 @@ public abstract class OperatorDevice {
 	protected Joystick inputDevice;
 	
 	/* To add new buttons, put them here */
-	protected JoystickButton alignToCamButton, resetGyroButton, driveForwardTimeButton;
+	protected JoystickButton alignToCamButton, resetGyroButton, driveForwardTimeButton, runLifterUpButton, runLifterDownButton;
 	
 	public OperatorDevice(int port)
 	{
@@ -47,6 +44,8 @@ public abstract class OperatorDevice {
 		alignToCamButton.whenPressed(new TurnToAngle(45));
 		resetGyroButton.whileHeld(new ResetGyro());
 		driveForwardTimeButton.whenPressed(new DriveForwardForTime(4000));
+		runLifterUpButton.whileHeld(new RunLifter(0.3));
+		runLifterDownButton.whileHeld(new RunLifter(-0.3));
 	}
 	
 	/*

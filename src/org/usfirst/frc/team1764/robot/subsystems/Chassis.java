@@ -30,7 +30,7 @@ public class Chassis extends PIDSubsystem {
 	/*
 	 * Initialize the motors and stuff
 	 */
-	public Talon frontLeft, backLeft, frontRight, backRight;
+	public TalonSRX frontLeft, backLeft, frontRight, backRight;
 	
 	/*
 	 * Used for getting angle and acceleration and stuff
@@ -58,10 +58,10 @@ public class Chassis extends PIDSubsystem {
 	{
 		super(KP, KI, KD);
 		//this.getPIDController().setContinuous(true);
-		this.frontLeft = new Talon(RobotMap.FRONT_LEFT_MOTOR_PORT);
-		this.frontRight = new Talon(RobotMap.FRONT_RIGHT_MOTOR_PORT);
-		this.backLeft = new Talon(RobotMap.BACK_LEFT_MOTOR_PORT);
-		this.backRight = new Talon(RobotMap.BACK_RIGHT_MOTOR_PORT);
+		this.frontLeft = new TalonSRX(RobotMap.FRONT_LEFT_MOTOR_PORT);
+		this.frontRight = new TalonSRX(RobotMap.FRONT_RIGHT_MOTOR_PORT);
+		this.backLeft = new TalonSRX(RobotMap.BACK_LEFT_MOTOR_PORT);
+		this.backRight = new TalonSRX(RobotMap.BACK_RIGHT_MOTOR_PORT);
 		
 		/* NavX plugged in to SPI on the MyRioExpansion(MXP) slot */
 		this.navx = new AHRS(SPI.Port.kMXP);
@@ -74,11 +74,11 @@ public class Chassis extends PIDSubsystem {
 	/* Allows for the input of a diffDriveSignal and sets the motor values without dealing with left and right motor speeds and stupid stuff */
 	public void setSignal(DiffDriveSignal s)
 	{
-		this.frontLeft.set(s.left);
-		this.backLeft.set(s.left);
+		this.frontLeft.set(ControlMode.PercentOutput, s.left);
+		this.backLeft.set(ControlMode.PercentOutput, s.left);
 		
-		this.backRight.set(-s.right);
-		this.frontRight.set(-s.right);
+		this.backRight.set(ControlMode.PercentOutput, -s.right);
+		this.frontRight.set(ControlMode.PercentOutput, -s.right);
 	}
 	
 	public void setAdditive(DiffDriveSignal s)
