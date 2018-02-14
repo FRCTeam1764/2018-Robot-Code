@@ -33,16 +33,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="module-library" exported="">
-      <library name="navx_frc.jar">
-        <CLASSES>
-          <root url="jar://$USER_HOME$/navx-mxp/java/lib/navx_frc.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="library" exported="" name="CTRE_Phoenix-sources" level="project" />
-    <orderEntry type="module-library" exported="">
       <library name="WPILib User Lib Directory">
         <CLASSES>
           <root url="file://$USER_HOME$/wpilib/user/java/lib" />
@@ -58,12 +48,12 @@
         <jarDirectory url="file://$USER_HOME$/wpilib/user/java/lib" recursive="true" type="SOURCES" />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library name="WPILib Libraries">
         <CLASSES>
           <root url="file://$USER_HOME$/wpilib/java/current/lib" />
         </CLASSES>
-        <JAVADOC>
+        <JAVADOC>/home/max/IdeaProjects/Test
           <root url="file://$USER_HOME$/wpilib/java/current/lib" />
         </JAVADOC>
         <SOURCES>
@@ -74,5 +64,7 @@
         <jarDirectory url="file://$USER_HOME$/wpilib/java/current/lib" recursive="true" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="library" exported="" name="CTRE_Phoenix" level="project" />
+    <orderEntry type="library" exported="" name="navx_frc" level="project" />
   </component>
 </module>
