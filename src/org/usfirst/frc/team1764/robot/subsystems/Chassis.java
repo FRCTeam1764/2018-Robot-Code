@@ -75,10 +75,10 @@ public class Chassis extends PIDSubsystem {
 	public void setSignal(DiffDriveSignal s)
 	{
 		this.frontLeft.set(ControlMode.PercentOutput, s.left);
-		this.backLeft.set(ControlMode.PercentOutput, s.left);
+		//this.backLeft.set(ControlMode.PercentOutput, s.left);
 		
-		this.backRight.set(ControlMode.PercentOutput, -s.right);
-		this.frontRight.set(ControlMode.PercentOutput, -s.right);
+		//this.backRight.set(ControlMode.PercentOutput, -s.right);
+		//this.frontRight.set(ControlMode.PercentOutput, -s.right);
 	}
 	
 	public void setAdditive(DiffDriveSignal s)

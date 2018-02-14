@@ -1,6 +1,7 @@
 package org.usfirst.frc.team1764.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
 import org.usfirst.frc.team1764.robot.RobotMap;
@@ -17,6 +18,8 @@ public class Lifter extends PIDSubsystem {
         super(Kp, Ki, Kd);
         motor1 = new TalonSRX(RobotMap.LIFTER_MOTOR_1_PORT);
         motor2 = new TalonSRX(RobotMap.LIFTER_MOTOR_2_PORT);
+        motor1.setNeutralMode(NeutralMode.Brake);
+        motor2.setNeutralMode(NeutralMode.Brake);
     }
     @Override
     protected double returnPIDInput() {

@@ -22,7 +22,9 @@ public abstract class OperatorDevice {
 	protected Joystick inputDevice;
 	
 	/* To add new buttons, put them here */
-	protected JoystickButton alignToCamButton, resetGyroButton, driveForwardTimeButton, runLifterUpButton, runLifterDownButton;
+	protected JoystickButton alignToCamButton, resetGyroButton, driveForwardTimeButton, 
+							runLifterUpButton, runLifterDownButton, runIntakeInButton,
+							runIntakeOutButton;
 	
 	public OperatorDevice(int port)
 	{
@@ -44,8 +46,10 @@ public abstract class OperatorDevice {
 		alignToCamButton.whenPressed(new TurnToAngle(45));
 		resetGyroButton.whileHeld(new ResetGyro());
 		driveForwardTimeButton.whenPressed(new DriveForwardForTime(4000));
-		runLifterUpButton.whileHeld(new RunLifter(0.3));
-		runLifterDownButton.whileHeld(new RunLifter(-0.3));
+		runLifterUpButton.whileHeld(new RunLifter(1.0));
+		runLifterDownButton.whileHeld(new RunLifter(-1.0));
+		runIntakeInButton.whileHeld(new RunIntake(1.0));
+		runIntakeOutButton.whileHeld(new RunIntake(-0.75));
 	}
 	
 	/*

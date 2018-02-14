@@ -25,16 +25,16 @@ public class RobotMap {
 	// public static int rangefinderModule = 1;
 	
 	public static final int GYRO_PORT = 0;
-	public static int INTAKE_LEFT_MOTOR = 4;
+	public static int INTAKE_LEFT_MOTOR = 6;
 	public static int INTAKE_RIGHT_MOTOR = 5;
-	public static int FRONT_LEFT_MOTOR_PORT = 1;
-	public static int BACK_LEFT_MOTOR_PORT = 0;
-	public static int FRONT_RIGHT_MOTOR_PORT = 2;
-	public static int BACK_RIGHT_MOTOR_PORT = 3;
+	public static int FRONT_LEFT_MOTOR_PORT = 3;
+	public static int BACK_LEFT_MOTOR_PORT = 8;
+	public static int FRONT_RIGHT_MOTOR_PORT = 4;
+	public static int BACK_RIGHT_MOTOR_PORT = 7;
 	public static int SHIFT_SOLENOID_LEFT = 0;
 	public static int SHIFT_SOLENOID_RIGHT = 4;
 
-	public static int LIFTER_MOTOR_1_PORT = 0;
-	public static int LIFTER_MOTOR_2_PORT = 1;
+	public static int LIFTER_MOTOR_1_PORT = 1;
+	public static int LIFTER_MOTOR_2_PORT = 2;
 	
 }

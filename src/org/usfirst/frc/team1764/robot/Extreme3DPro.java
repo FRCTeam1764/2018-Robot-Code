@@ -2,7 +2,6 @@ package org.usfirst.frc.team1764.robot;
 
 import org.usfirst.frc.team1764.robot.commands.DriveForwardForTime;
 import org.usfirst.frc.team1764.robot.commands.ResetGyro;
-import org.usfirst.frc.team1764.robot.commands.RunBoxIntake;
 import org.usfirst.frc.team1764.robot.commands.TurnToAngle;
 
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -44,6 +43,8 @@ public class Extreme3DPro extends OperatorDevice {
 		this.driveForwardTimeButton = new JoystickButton(this.inputDevice, 9);
 		this.runLifterUpButton = new JoystickButton(this.inputDevice, 7);
 		this.runLifterDownButton = new JoystickButton(this.inputDevice, 8);
+		this.runIntakeInButton = new JoystickButton(this.inputDevice, 5);
+		this.runIntakeOutButton = new JoystickButton(this.inputDevice, 3);
 	}
 
 }

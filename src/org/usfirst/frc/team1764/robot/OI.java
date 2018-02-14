@@ -11,7 +11,6 @@ import org.usfirst.frc.team1764.robot.commands.AlignToCamera;
 import org.usfirst.frc.team1764.robot.commands.DriveForwardForTime;
 import org.usfirst.frc.team1764.robot.commands.FollowPath;
 import org.usfirst.frc.team1764.robot.commands.ResetGyro;
-import org.usfirst.frc.team1764.robot.commands.RunBoxIntake;
 import org.usfirst.frc.team1764.robot.commands.TurnToAngle;
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -34,8 +33,6 @@ public class OI {
 	{
 		return in.getTurn();
 	}
-	
-	
 	
 	public OI() {
 		this.in = new Extreme3DPro(0);
