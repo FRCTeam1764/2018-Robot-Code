@@ -15,7 +15,9 @@ import util.DiffDriveSignal;
  * 
  * @author FRC1764
  * This class serves as a wrapper for WPILib Joystick class that allows for multiple types of input methods to be defined
- * To create a new input device, simply create a subclass of OperatorDevice and override the abstract methods. 
+ * To create a new input device, simply create a subclass of OperatorDevice and override the abstract methods.
+ *
+ * Something
  */
 public abstract class OperatorDevice {
 	
