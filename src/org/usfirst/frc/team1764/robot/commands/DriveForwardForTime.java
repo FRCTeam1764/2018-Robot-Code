@@ -27,22 +27,26 @@ public class DriveForwardForTime extends Command {
     	this.startTime = System.currentTimeMillis();
     	this.endTime = this.time + this.startTime;
     	Robot.chassis.setSetpoint(0);
+    	
+    	/*
+    	 * Ok so the additive is just something that is not controlled by the PID loop and just makes it go forward. 
+    	 * The PID loop only cares about locking to an angle, so it will add onto that additive to adjust for the angle. 
+    	 * This allows it to drive in a straight line without going off target
+    	 */
+    	
     	Robot.chassis.setAdditive(new DiffDriveSignal(-0.25, -0.25));
     	
     	Robot.chassis.enable();
-    	//Robot.chassis.autoSpeed = -0.5;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//Robot.chassis.setLeft(speed);
-    	
-    	
-    	//Robot.chassis.setLeft(0.2);
-    	//Robot.chassis.setRight(-0.2);
+
     }
 
-    // Make this return true when this Command no longer needs to run execute()
+    /*
+     * Die when it runs out of time
+     */
     protected boolean isFinished() {
         return System.currentTimeMillis() >= this.endTime;
     }
@@ -51,6 +55,9 @@ public class DriveForwardForTime extends Command {
     protected void end() {
     	
     	Robot.chassis.disable();
+    	/*
+    	 * We don't want the robot to start driving forward if/when we want it to just align to an angle without moving forward.
+    	 */
     	Robot.chassis.setAdditive(DiffDriveSignal.NEUTRAL);
     }
 

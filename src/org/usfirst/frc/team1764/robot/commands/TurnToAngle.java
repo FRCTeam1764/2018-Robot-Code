@@ -17,37 +17,28 @@ public class TurnToAngle extends Command {
 	long deltaTime;
 	long lastTime;
     public TurnToAngle(double targetAngle) {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
     	this.targetAngle = targetAngle;
     	
     	requires(chassis);
-    	
-    	//this.setInterruptible(false);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	//chassis.shiftDown();
-    	//chassis.setAdditive(new DiffDriveSignal(additive, additive));
     	chassis.setSetpoint(targetAngle);
-    	chassis.enable();
-    	
-    	//chassis.setSetpoint(targetAngle);
-    	
+    	chassis.enable();   	
     }
 
-    // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     }
 
-    // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
+    	/* Want to make sure that the robot is settled and on target before dying */
         return Robot.chassis.onTarget() && (Math.abs(Robot.chassis.navx.getRate()) <= 0.1);
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	/* Want to make sure the next time we enable the PID controller it doesn't go forward for like, no reason */
     	chassis.setAdditive(DiffDriveSignal.NEUTRAL);
     	chassis.disable();
     }

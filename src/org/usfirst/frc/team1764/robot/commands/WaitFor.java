@@ -9,6 +9,11 @@ public class WaitFor extends Command {
 	long startTime;
 	long endTime;
 	long duration;
+	
+	/*
+	 * This allows for a wait in a command group without interrupting everything else 
+	 */
+	
     public WaitFor(long time) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

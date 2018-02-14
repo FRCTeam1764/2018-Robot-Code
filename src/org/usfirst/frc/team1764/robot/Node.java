@@ -1,8 +1,20 @@
 package org.usfirst.frc.team1764.robot;
 
+/**
+ * 
+ * @author FRC1764
+ * This class contains position data for a single point on a path for the robot to follow
+ * This is for a very rudimentary path following algorithm and will probably not be used 
+ */
+
 public class Node {
+	
 	private double x;
 	private double y;
+	
+	/*
+	 * TODO Change the positional data to be a Vector2d to make math more generalized for these classes
+	 */
 	
 	public Node(double x, double y)
 	{

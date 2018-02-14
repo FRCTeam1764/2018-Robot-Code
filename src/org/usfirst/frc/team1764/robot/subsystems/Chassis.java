@@ -26,23 +26,34 @@ public class Chassis extends PIDSubsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
+	
+	/*
+	 * Initialize the motors and stuff
+	 */
 	public Talon frontLeft, backLeft, frontRight, backRight;
+	
+	/*
+	 * Used for getting angle and acceleration and stuff
+	 */
 	public AHRS navx;
 	
+	/*
+	 * Shaft encoder
+	 */
 	public Grayhill63R thingy;
 	
+	/*
+	 * This is added onto the PID output so that you can make the robot drive forward or backwards while aligning to an angle
+	 */
 	public DiffDriveSignal additive = DiffDriveSignal.NEUTRAL;
-	
-	//public Potentiometer pot;
-	
-	public double autoSpeed = 0;
-		
-	//private DoubleSolenoid shiftSolenoid;
-	
+
+	/*
+	 * Parameters for PID controller (don't change please) These must be tuned for whatever chassis you are using
+	 */
 	public static double KP = 0.0275;
 	public static double KI = 0.00;
 	public static double KD = 0.06;
-	//public static final double F = 0.00;
+	
 	public Chassis()
 	{
 		super(KP, KI, KD);
@@ -51,12 +62,16 @@ public class Chassis extends PIDSubsystem {
 		this.frontRight = new Talon(RobotMap.FRONT_RIGHT_MOTOR_PORT);
 		this.backLeft = new Talon(RobotMap.BACK_LEFT_MOTOR_PORT);
 		this.backRight = new Talon(RobotMap.BACK_RIGHT_MOTOR_PORT);
+		
+		/* NavX plugged in to SPI on the MyRioExpansion(MXP) slot */
 		this.navx = new AHRS(SPI.Port.kMXP);
-		//this.shiftSolenoid = new DoubleSolenoid(RobotMap.SHIFT_SOLENOID_LEFT, RobotMap.SHIFT_SOLENOID_RIGHT);
 		this.thingy = new Grayhill63R(0,1);
+		
+		/* Defines how close the robot has to be to the target angle to be considered "on target" */
 		setAbsoluteTolerance(1);
 	}
 	
+	/* Allows for the input of a diffDriveSignal and sets the motor values without dealing with left and right motor speeds and stupid stuff */
 	public void setSignal(DiffDriveSignal s)
 	{
 		this.frontLeft.set(s.left);
@@ -97,7 +112,9 @@ public class Chassis extends PIDSubsystem {
 	@Override
 	protected void usePIDOutput(double output) {
 		// TODO Auto-generated method stub
+		/* So we build a signal from the output that turns to the angle, but don't set our speeds to that just yet */
 		DiffDriveSignal pidSignal = new DiffDriveSignal(output, -output);
+		/* We tack on that additive value so that we can make the robot drive forward, the PID loop then adjusts for the error in moving forward */
 		setSignal(pidSignal.add(additive));
 	}
 }

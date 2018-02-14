@@ -13,19 +13,16 @@ public class MathUtil {
 		return val;
 	}
 	
+	/*
+	 * This finds the optimal wheelspeeds for the drivetrain to go a turning velocity and radius
+	 * This will probably be set to return a DiffDriveState instead and have a PID that reads from DiffDriveState called targetState 
+	 * and will set the wheel speeds to whatever is in the state. But there might be issues with having the same class being used to describe the current state
+	 * of the drivetrain from the encoders while manually setting a value on the state and using it for a target state. 
+	 */
 	public static DiffDriveSignal inverseKinematics(double angularVel, double turnRadius)
 	{
 		
 		return new DiffDriveSignal(Math.abs(angularVel*turnRadius) + angularVel*HALF_WIDTH, Math.abs(angularVel*turnRadius) - angularVel*HALF_WIDTH);
-			//return new DiffDriveSignal(angularVel*(turnRadius + HALF_WIDTH), angularVel*(turnRadius - HALF_WIDTH));
-//		}
-//		else if(turnRadius < 0)
-//		{
-//			return new DiffDriveSignal(angularVel*(turnRadius - HALF_WIDTH), angularVel*(turnRadius + HALF_WIDTH));
-//		}
-//		else
-//		{
-//			return new DiffDriveSignal((angularVel*HALF_WIDTH))
-//		}
+
 	}
 }

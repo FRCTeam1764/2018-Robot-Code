@@ -5,6 +5,10 @@ public class Vector2d {
 	public double x;
 	public double y;
 	
+	/*
+	 * This is just a utility class. pretty self explanatory if you understand vector math which most people know. 
+	 */
+	
 	public Vector2d(double x, double y)
 	{
 		this.x = x;

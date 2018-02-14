@@ -12,20 +12,23 @@ import util.DiffDriveSignal;
 public class DriveWithJoystick extends Command {
 
     public DriveWithJoystick() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
     	requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	/*
+    	 * This doesn't disable the subsystem, rather, it disables the PID Controller so it's not fighting the operator
+    	 */
     	chassis.disable();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//System.out.println("ANGLE: " +  chassis.getAngle());
-
+    	/*
+    	 * Nice thing about this is that if you have a different input device that perhaps doesn't calculate differential drives the same way, 
+    	 * all you have to do is explicitly override that without touching this code at all. 
+    	 */
     	chassis.setSignal(oi.in.toDiffDriveSignal());
     }
 
