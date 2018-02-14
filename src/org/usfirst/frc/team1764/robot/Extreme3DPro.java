@@ -29,7 +29,7 @@ public class Extreme3DPro extends OperatorDevice {
 	@Override
 	public double getTurn() {
 		// TODO Auto-generated method stub
-		return this.inputDevice.getX();
+		return this.inputDevice.getZ();
 	}
 
 	/*

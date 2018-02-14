@@ -27,7 +27,7 @@ public class RobotMap {
 	public static final int GYRO_PORT = 0;
 	public static int INTAKE_LEFT_MOTOR = 6;
 	public static int INTAKE_RIGHT_MOTOR = 5;
-	public static int FRONT_LEFT_MOTOR_PORT = 3;
+	public static int FRONT_LEFT_MOTOR_PORT = 8;
 	public static int BACK_LEFT_MOTOR_PORT = 8;
 	public static int FRONT_RIGHT_MOTOR_PORT = 4;
 	public static int BACK_RIGHT_MOTOR_PORT = 7;
