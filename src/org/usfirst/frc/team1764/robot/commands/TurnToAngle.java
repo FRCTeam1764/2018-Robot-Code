@@ -1,7 +1,7 @@
 package org.usfirst.frc.team1764.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import util.DiffDriveSignal;
+import custom.drive.DiffDriveSignal;
 
 import static org.usfirst.frc.team1764.robot.Robot.*;
 

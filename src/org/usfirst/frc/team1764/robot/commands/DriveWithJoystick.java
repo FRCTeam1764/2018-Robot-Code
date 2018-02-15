@@ -4,7 +4,6 @@ import static org.usfirst.frc.team1764.robot.Robot.*;
 
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import util.DiffDriveSignal;
 
 /**
  *

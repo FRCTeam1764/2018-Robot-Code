@@ -1,4 +1,4 @@
-package util;
+package custom.drive;
 
 public class DiffDriveSignal {
 	public static final DiffDriveSignal NEUTRAL = new DiffDriveSignal(0, 0);

@@ -7,14 +7,8 @@
 
 package org.usfirst.frc.team1764.robot;
 
-import org.usfirst.frc.team1764.robot.commands.AlignToCamera;
-import org.usfirst.frc.team1764.robot.commands.DriveForwardForTime;
-import org.usfirst.frc.team1764.robot.commands.FollowPath;
-import org.usfirst.frc.team1764.robot.commands.ResetGyro;
-import org.usfirst.frc.team1764.robot.commands.TurnToAngle;
-
-import edu.wpi.first.wpilibj.Joystick;
-import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import custom.oi.Extreme3DPro;
+import custom.oi.OperatorDevice;
 
 /**
  * This class is the glue that binds the controls on the physical operator

@@ -1,8 +1,8 @@
 package org.usfirst.frc.team1764.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
-import util.DiffDriveState;
-import util.MathUtil;
+import custom.drive.DiffDriveState;
+import custom.math.MathUtil;
 
 import static org.usfirst.frc.team1764.robot.Robot.chassis;
 

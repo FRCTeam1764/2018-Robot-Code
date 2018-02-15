@@ -1,22 +1,12 @@
 package org.usfirst.frc.team1764.robot.subsystems;
 
-import edu.wpi.first.wpilibj.AnalogGyro;
-import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.SPI;
-import edu.wpi.first.wpilibj.SerialPort;
 
-import com.ctre.phoenix.motorcontrol.ControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.kauailabs.navx.frc.AHRS;
-import edu.wpi.first.wpilibj.SpeedController;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.PIDSubsystem;
-import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.interfaces.Gyro;
-import edu.wpi.first.wpilibj.interfaces.Potentiometer;
-import util.DiffDriveSignal;
-import util.DiffDriveState;
-import util.Grayhill63R;
+import custom.drive.DiffDriveSignal;
+import custom.drive.DiffDriveState;
+import custom.PIDGearbox;
 
 import org.usfirst.frc.team1764.robot.RobotMap;
 import org.usfirst.frc.team1764.robot.commands.DriveWithJoystick;
@@ -31,7 +21,7 @@ public class Chassis extends PIDSubsystem {
 	/*
 	 * Initialize the motors and stuff
 	 */
-	public Gearbox left, right;
+	public PIDGearbox left, right;
 	
 	/*
 	 * Used for getting angle and acceleration and stuff
@@ -54,9 +44,9 @@ public class Chassis extends PIDSubsystem {
 	{
 		super(KP, KI, KD);
 		//this.getPIDController().setContinuous(true);
-		this.left = new Gearbox(RobotMap.FRONT_LEFT_MOTOR_PORT, RobotMap.BACK_LEFT_MOTOR_PORT,
+		this.left = new PIDGearbox(RobotMap.FRONT_LEFT_MOTOR_PORT, RobotMap.BACK_LEFT_MOTOR_PORT,
 								RobotMap.LEFT_ENCODER_PORT_A, RobotMap.LEFT_ENCODER_PORT_B);
-		this.right = new Gearbox(RobotMap.FRONT_RIGHT_MOTOR_PORT, RobotMap.BACK_RIGHT_MOTOR_PORT,
+		this.right = new PIDGearbox(RobotMap.FRONT_RIGHT_MOTOR_PORT, RobotMap.BACK_RIGHT_MOTOR_PORT,
 								 RobotMap.RIGHT_ENCODER_PORT_A, RobotMap.RIGHT_ENCODER_PORT_B);
 
 		
@@ -76,21 +66,21 @@ public class Chassis extends PIDSubsystem {
 
 	public void setDiffDriveState(DiffDriveState s)
 	{
-		this.left.setSetpoint(s.left);
-		this.right.setSetpoint(s.right);
+		this.left.setSpeed(s.left);
+		this.right.setSpeed(s.right);
 	}
 
 	public void enableIndividualPID()
 	{
 		this.disable();
-		this.left.enable();
-		this.right.enable();
+		this.left.enablePID();
+		this.right.enablePID();
 	}
 
 	public void disableIndividualPID()
 	{
-		this.left.disable();
-		this.right.disable();
+		this.left.disablePID();
+		this.right.disablePID();
 	}
 	
 	public void setAdditive(DiffDriveSignal s)
