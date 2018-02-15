@@ -34,4 +34,9 @@ public class Grayhill63R {
 	{
 		return encoder.getDirection();
 	}
+
+	public void reset()
+	{
+		encoder.reset();
+	}
 }

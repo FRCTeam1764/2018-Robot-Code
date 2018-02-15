@@ -2,7 +2,12 @@ package util;
 
 import static org.usfirst.frc.team1764.robot.RobotParameters.*;
 
+
+
 public class DiffDriveState {
+
+	public static final DiffDriveState NEUTRAL = new DiffDriveState(0,0);
+
 	/* 
 	 * This class contains info about the current state of the drivetrain and the wheelspeeds and stuff. Probably going to throw in
 	 * GrayHill63R in here which will get the left and right wheelspeeds. 

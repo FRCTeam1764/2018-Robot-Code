@@ -29,6 +29,9 @@ public class DriveWithJoystick extends Command {
     	 * Nice thing about this is that if you have a different input device that perhaps doesn't calculate differential drives the same way, 
     	 * all you have to do is explicitly override that without touching this code at all. 
     	 */
+    	SmartDashboard.putNumber("LEFT_ENCODER: ", chassis.left.encoder.getDistance());
+    	SmartDashboard.putNumber("RIGHT_ENCODER: ", chassis.right.encoder.getDistance());
+
     	chassis.setSignal(oi.in.toDiffDriveSignal());
     }
 

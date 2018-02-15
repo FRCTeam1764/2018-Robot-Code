@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.interfaces.Gyro;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 import util.DiffDriveSignal;
+import util.DiffDriveState;
 import util.Grayhill63R;
 
 import org.usfirst.frc.team1764.robot.RobotMap;
@@ -30,17 +31,12 @@ public class Chassis extends PIDSubsystem {
 	/*
 	 * Initialize the motors and stuff
 	 */
-	public TalonSRX frontLeft, backLeft, frontRight, backRight;
+	public Gearbox left, right;
 	
 	/*
 	 * Used for getting angle and acceleration and stuff
 	 */
 	public AHRS navx;
-	
-	/*
-	 * Shaft encoder
-	 */
-	public Grayhill63R thingy;
 	
 	/*
 	 * This is added onto the PID output so that you can make the robot drive forward or backwards while aligning to an angle
@@ -58,14 +54,14 @@ public class Chassis extends PIDSubsystem {
 	{
 		super(KP, KI, KD);
 		//this.getPIDController().setContinuous(true);
-		this.frontLeft = new TalonSRX(RobotMap.FRONT_LEFT_MOTOR_PORT);
-		this.frontRight = new TalonSRX(RobotMap.FRONT_RIGHT_MOTOR_PORT);
-		this.backLeft = new TalonSRX(RobotMap.BACK_LEFT_MOTOR_PORT);
-		this.backRight = new TalonSRX(RobotMap.BACK_RIGHT_MOTOR_PORT);
+		this.left = new Gearbox(RobotMap.FRONT_LEFT_MOTOR_PORT, RobotMap.BACK_LEFT_MOTOR_PORT,
+								RobotMap.LEFT_ENCODER_PORT_A, RobotMap.LEFT_ENCODER_PORT_B);
+		this.right = new Gearbox(RobotMap.FRONT_RIGHT_MOTOR_PORT, RobotMap.BACK_RIGHT_MOTOR_PORT,
+								 RobotMap.RIGHT_ENCODER_PORT_A, RobotMap.RIGHT_ENCODER_PORT_B);
+
 		
 		/* NavX plugged in to SPI on the MyRioExpansion(MXP) slot */
 		this.navx = new AHRS(SPI.Port.kMXP);
-		this.thingy = new Grayhill63R(0,1);
 		
 		/* Defines how close the robot has to be to the target angle to be considered "on target" */
 		setAbsoluteTolerance(1);
@@ -74,11 +70,27 @@ public class Chassis extends PIDSubsystem {
 	/* Allows for the input of a diffDriveSignal and sets the motor values without dealing with left and right motor speeds and stupid stuff */
 	public void setSignal(DiffDriveSignal s)
 	{
-		this.frontLeft.set(ControlMode.PercentOutput, s.left);
-		this.backLeft.set(ControlMode.PercentOutput, s.left);
-		
-		this.backRight.set(ControlMode.PercentOutput, -s.right);
-		this.frontRight.set(ControlMode.PercentOutput, -s.right);
+		this.left.setSpeed(s.left);
+		this.right.setSpeed(-s.right);
+	}
+
+	public void setDiffDriveState(DiffDriveState s)
+	{
+		this.left.setSetpoint(s.left);
+		this.right.setSetpoint(s.right);
+	}
+
+	public void enableIndividualPID()
+	{
+		this.disable();
+		this.left.enable();
+		this.right.enable();
+	}
+
+	public void disableIndividualPID()
+	{
+		this.left.disable();
+		this.right.disable();
 	}
 	
 	public void setAdditive(DiffDriveSignal s)
@@ -88,13 +100,23 @@ public class Chassis extends PIDSubsystem {
 	
 	public double getAngle()
 	{
-		//System.out.println(navx.isConnected());
 		return navx.getAngle();
 	}
 	
 	public void resetGyro()
 	{
 		navx.reset();
+	}
+
+	public void resetEncoders()
+	{
+		right.encoder.reset();
+		left.encoder.reset();
+	}
+
+	public DiffDriveState getCurrentState()
+	{
+		return new DiffDriveState(this.left.encoder.getRate(), this.right.encoder.getRate());
 	}
 	
     public void initDefaultCommand() {

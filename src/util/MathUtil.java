@@ -19,10 +19,10 @@ public class MathUtil {
 	 * and will set the wheel speeds to whatever is in the state. But there might be issues with having the same class being used to describe the current state
 	 * of the drivetrain from the encoders while manually setting a value on the state and using it for a target state. 
 	 */
-	public static DiffDriveSignal inverseKinematics(double angularVel, double turnRadius)
+	public static DiffDriveState inverseKinematics(double angularVel, double turnRadius)
 	{
 		
-		return new DiffDriveSignal(Math.abs(angularVel*turnRadius) + angularVel*HALF_WIDTH, Math.abs(angularVel*turnRadius) - angularVel*HALF_WIDTH);
+		return new DiffDriveState(Math.abs(angularVel*turnRadius) + angularVel*HALF_WIDTH, Math.abs(angularVel*turnRadius) - angularVel*HALF_WIDTH);
 
 	}
 }
