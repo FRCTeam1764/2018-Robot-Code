@@ -27,6 +27,9 @@ public class Chassis extends PIDSubsystem {
 	 * Used for getting angle and acceleration and stuff
 	 */
 	public AHRS navx;
+
+
+
 	
 	/*
 	 * This is added onto the PID output so that you can make the robot drive forward or backwards while aligning to an angle
@@ -55,6 +58,8 @@ public class Chassis extends PIDSubsystem {
 		
 		/* Defines how close the robot has to be to the target angle to be considered "on target" */
 		setAbsoluteTolerance(1);
+
+
 	}
 	
 	/* Allows for the input of a diffDriveSignal and sets the motor values without dealing with left and right motor speeds and stupid stuff */

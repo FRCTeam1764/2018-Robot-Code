@@ -12,6 +12,7 @@ public class DriveWithJoystick extends Command {
 
     public DriveWithJoystick() {
     	requires(chassis);
+    	requires(lidar);
     }
 
     // Called just before this Command runs the first time
@@ -32,6 +33,7 @@ public class DriveWithJoystick extends Command {
     	SmartDashboard.putNumber("RIGHT_ENCODER: ", chassis.right.encoder.getDistance());
 
     	chassis.setSignal(oi.in.toDiffDriveSignal());
+
     }
 
     // Make this return true when this Command no longer needs to run execute()

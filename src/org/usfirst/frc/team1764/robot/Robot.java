@@ -16,10 +16,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team1764.robot.commands.AutoPickup;
 import org.usfirst.frc.team1764.robot.commands.FollowPath;
-import org.usfirst.frc.team1764.robot.subsystems.BoxIntake;
-import org.usfirst.frc.team1764.robot.subsystems.Chassis;
-import org.usfirst.frc.team1764.robot.subsystems.Intake;
-import org.usfirst.frc.team1764.robot.subsystems.Lifter;
+import org.usfirst.frc.team1764.robot.subsystems.*;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -32,6 +29,8 @@ public class Robot extends TimedRobot {
 	public static final Chassis chassis = new Chassis();
 	public static final Lifter lifter = new Lifter();
 	public static final Intake intake = new Intake();
+	public static final Lidar lidar = new Lidar();
+
 	public static OI oi;
 	
 	public static NetworkTable table;
@@ -124,7 +123,7 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		SmartDashboard.putNumber("angle", chassis.getAngle());
-		
+		SmartDashboard.putNumber("LIDAR: ",lidar.GetLidar());
 		Scheduler.getInstance().run();
 	}
 
