@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team1764.robot;
 
+import custom.sensors.Grayhill63R;
+import custom.sensors.TFMiniLidar;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -29,7 +31,10 @@ public class Robot extends TimedRobot {
 	public static final Chassis chassis = new Chassis();
 	public static final Lifter lifter = new Lifter();
 	public static final Intake intake = new Intake();
-	public static final Lidar lidar = new Lidar();
+	//public static final Lidar lidar = new Lidar();
+	public static final TFMiniLidar lidar = new TFMiniLidar();
+
+	//public static Grayhill63R encoder = new Grayhill63R(4, 5);
 
 	public static OI oi;
 	
@@ -123,7 +128,8 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		SmartDashboard.putNumber("angle", chassis.getAngle());
-		SmartDashboard.putNumber("LIDAR: ",lidar.GetLidar());
+		SmartDashboard.putNumber("LIDAR: ",lidar.getDistance());
+		//SmartDashboard.putNumber("encoderttt", encoder.getDistance());
 		Scheduler.getInstance().run();
 	}
 

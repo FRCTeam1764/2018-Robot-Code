@@ -45,9 +45,9 @@ public abstract class OperatorDevice {
 		bindButtons();
 		alignToCamButton.whenPressed(new TurnToAngle(45));
 		resetGyroButton.whileHeld(new ResetGyro());
-		driveForwardTimeButton.whenPressed(new DriveForwardForTime(4000));
-		runLifterUpButton.whileHeld(new RunLifter(1.0));
-		runLifterDownButton.whileHeld(new RunLifter(-1.0));
+		driveForwardTimeButton.whenPressed(new DriveForwardForDistance(20, 10));
+		runLifterUpButton.whileHeld(new SetLifterPosition(-205));
+		runLifterDownButton.whileHeld(new RunLifter(1.0));
 		runIntakeInButton.whileHeld(new RunIntake(1.0));
 		runIntakeOutButton.whileHeld(new RunIntake(-0.75));
 	}

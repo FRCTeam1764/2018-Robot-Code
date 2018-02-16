@@ -19,7 +19,7 @@ public class Extreme3DPro extends OperatorDevice {
 	@Override
 	public double getThrottle() {
 		// TODO Auto-generated method stub
-		return this.inputDevice.getY();
+		return -this.inputDevice.getY();
 	}
 
 	@Override

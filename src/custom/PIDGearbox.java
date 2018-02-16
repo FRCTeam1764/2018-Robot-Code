@@ -6,10 +6,17 @@ import edu.wpi.first.wpilibj.PIDSourceType;
 import custom.sensors.Grayhill63R;
 
 public class PIDGearbox extends Gearbox {
-    public static final double KP = 0;
+
+    /*
+    This class is an extension of Gearbox, which just has the bare minimum to write speeds to the motors
+    at the same time. This includes an encoder, a PIDController, and an adapter (for allowing the PIDController
+    to interface with the TalonSRX because by default
+     */
+
+    public static final double KP = 0.1;
     public static final double KI = 0;
     public static final double KD = 0;
-    public static final double KF = 0;
+    public static final double KF = 0.01;
 
     public Grayhill63R encoder;
 
@@ -29,10 +36,16 @@ public class PIDGearbox extends Gearbox {
         encoder.getEncoder().setPIDSourceType(PIDSourceType.kRate);
     }
 
+    public void setPIDParams(double p, double i, double d, double f)
+    {
+        controller.setPID(p,i,d,f);
+    }
+
     public void set(double speed)
     {
         this.motor1.set(ControlMode.PercentOutput, speed);
         this.motor2.set(ControlMode.PercentOutput, speed);
+
     }
 
     public void enablePID()
@@ -48,5 +61,10 @@ public class PIDGearbox extends Gearbox {
     public void setSpeed(double speed)
     {
         this.controller.setSetpoint(speed);
+    }
+
+    public void setPosition(double pos)
+    {
+        this.controller.setSetpoint(pos);
     }
 }

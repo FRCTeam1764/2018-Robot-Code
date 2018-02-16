@@ -12,7 +12,7 @@ public class DriveWithJoystick extends Command {
 
     public DriveWithJoystick() {
     	requires(chassis);
-    	requires(lidar);
+    	//requires(lidar);
     }
 
     // Called just before this Command runs the first time

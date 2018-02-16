@@ -1,5 +1,6 @@
 package org.usfirst.frc.team1764.robot.subsystems;
 
+import com.kauailabs.navx.AHRSProtocol;
 import edu.wpi.first.wpilibj.SPI;
 
 import com.kauailabs.navx.frc.AHRS;
@@ -65,8 +66,8 @@ public class Chassis extends PIDSubsystem {
 	/* Allows for the input of a diffDriveSignal and sets the motor values without dealing with left and right motor speeds and stupid stuff */
 	public void setSignal(DiffDriveSignal s)
 	{
-		this.left.setSpeed(s.left);
-		this.right.setSpeed(-s.right);
+		this.left.set(s.left);
+		this.right.set(-s.right);
 	}
 
 	public void setDiffDriveState(DiffDriveState s)

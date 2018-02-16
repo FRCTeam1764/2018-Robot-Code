@@ -27,11 +27,14 @@ public class RobotMap {
 	public static final int GYRO_PORT = 0;
 	public static final int LEFT_ENCODER_PORT_A = 0;
 	public static final int LEFT_ENCODER_PORT_B = 1;
-	public static final int RIGHT_ENCODER_PORT_A = 2;
-	public static final int RIGHT_ENCODER_PORT_B = 3;
+	public static final int RIGHT_ENCODER_PORT_A = 4;
+	public static final int RIGHT_ENCODER_PORT_B = 5;
+
+	public static final int LIFTER_ENCODER_A = 2;
+	public static final int LIFTER_ENCODER_B = 3;
 	public static int INTAKE_LEFT_MOTOR = 6;
 	public static int INTAKE_RIGHT_MOTOR = 5;
-	public static int FRONT_LEFT_MOTOR_PORT = 8;
+	public static int FRONT_LEFT_MOTOR_PORT = 3;
 	public static int BACK_LEFT_MOTOR_PORT = 8;
 	public static int FRONT_RIGHT_MOTOR_PORT = 4;
 	public static int BACK_RIGHT_MOTOR_PORT = 7;
