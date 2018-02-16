@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1cfc8c61-f684-45cf-8860-64834ab83901" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/custom/sensors/TFMiniLidar.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/SetLifterPosition.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/CTRE_Phoenix.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/navx_frc.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/TestRobot.iml" afterPath="$PROJECT_DIR$/TestRobot.iml" />
-      <change beforePath="$PROJECT_DIR$/src/custom/Gearbox.java" afterPath="$PROJECT_DIR$/src/custom/Gearbox.java" />
-      <change beforePath="$PROJECT_DIR$/src/custom/PIDGearbox.java" afterPath="$PROJECT_DIR$/src/custom/PIDGearbox.java" />
-      <change beforePath="$PROJECT_DIR$/src/custom/oi/Extreme3DPro.java" afterPath="$PROJECT_DIR$/src/custom/oi/Extreme3DPro.java" />
-      <change beforePath="$PROJECT_DIR$/src/custom/oi/OperatorDevice.java" afterPath="$PROJECT_DIR$/src/custom/oi/OperatorDevice.java" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/Robot.java" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/Robot.java" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/RobotMap.java" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/RobotMap.java" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/DriveForwardForDistance.java" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/DriveForwardForDistance.java" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/DriveWithJoystick.java" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/DriveWithJoystick.java" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/RunLifter.java" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/RunLifter.java" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/subsystems/Chassis.java" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/subsystems/Chassis.java" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/subsystems/Lidar.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/subsystems/Lifter.java" afterPath="$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/subsystems/Lifter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -102,26 +85,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Extreme3DPro.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/custom/oi/Extreme3DPro.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="16" lean-forward="false" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OperatorDevice.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/custom/oi/OperatorDevice.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="48" column="62" lean-forward="false" selection-start-line="48" selection-start-column="62" selection-end-line="48" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RobotMap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/RobotMap.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -132,11 +95,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TFMiniLidar.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TFMiniLidar.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/custom/sensors/TFMiniLidar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+            <state relative-caret-position="357">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gearbox.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/custom/Gearbox.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DriveForwardForDistance.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/DriveForwardForDistance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -391,6 +374,14 @@
       <option name="presentableId" value="Default" />
       <updated>1518736546117</updated>
     </task>
+    <task id="LOCAL-00001" summary="tuned lifterpids and used encoders on lifter">
+      <created>1518764745535</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1518764745535</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -427,6 +418,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="tuned lifterpids and used encoders on lifter" />
+    <option name="LAST_COMMIT_MESSAGE" value="tuned lifterpids and used encoders on lifter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -669,14 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/DriveForwardForDistance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/custom/sensors/Grayhill63R.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -721,14 +708,6 @@
             <element signature="e#1832#1833#0" expanded="false" />
             <element signature="e#1880#1881#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/custom/Gearbox.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -827,8 +806,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/custom/sensors/TFMiniLidar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        <state relative-caret-position="357">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/custom/Gearbox.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/usfirst/frc/team1764/robot/commands/DriveForwardForDistance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="31" column="45" lean-forward="true" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
           <folding />
         </state>
       </provider>
