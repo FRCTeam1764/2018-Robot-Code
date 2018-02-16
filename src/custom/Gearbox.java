@@ -25,5 +25,6 @@ public class Gearbox {
     {
         this.motor1.set(ControlMode.PercentOutput, speed);
         this.motor2.set(ControlMode.PercentOutput, speed);
+        //this.motor1.
     }
 }

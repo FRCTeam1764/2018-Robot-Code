@@ -49,4 +49,5 @@ public class Vector2d {
 	{
 		return this.scale(1/this.getLength());
 	}
+
 }
